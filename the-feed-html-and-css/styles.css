@@ -1,0 +1,28 @@
+body{
+    width: 60%;
+    margin: auto;
+    background-color: rosybrown;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.container{
+    padding-top: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    color: lavender;
+}
+
+a:visited{
+    color: lavender;
+}
+
+a:hover{
+    background-color: maroon;
+}
+
+img{
+    padding: 20px 0px;
+}

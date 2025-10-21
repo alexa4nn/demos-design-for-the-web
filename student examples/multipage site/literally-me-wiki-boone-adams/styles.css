@@ -1,0 +1,19 @@
+body { 
+	font-size: 24px; 
+	background-color: rgb(230, 229, 229); 
+	color: rgb(29, 29, 29);
+    margin: auto;
+    width: 75%;
+}
+a {
+	color: rgb(0, 0, 0);
+}
+
+a:hover {
+	color: rgb(250, 87, 209);
+}
+.images{
+    text-align: center;
+    background-color: rgb(204, 203, 203);
+    padding: 1%;
+}

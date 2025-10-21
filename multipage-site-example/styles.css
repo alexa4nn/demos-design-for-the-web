@@ -1,0 +1,24 @@
+body{
+    padding-top: 200px;
+	background-color: linen;
+	color: maroon;
+
+    width: 60%;
+    margin: auto;
+}
+
+a {
+	color: rosybrown
+}
+
+a:hover{
+    background-color: maroon;
+}
+
+.images{
+    text-align: center;
+}
+
+.back{
+    text-align: center;
+}

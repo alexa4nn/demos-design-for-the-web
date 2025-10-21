@@ -1,0 +1,57 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+a{
+    color: white;
+}
+
+a:visited{
+    color: white;
+}
+
+.book{
+    position: absolute;
+    top: 175px;
+    left: 225px;
+}
+
+.clock{
+    position: absolute;
+    top: 100px;
+    left: 600px;
+}
+
+.lamp{
+    position: absolute;
+    top: 150px;
+    left: 1000px;
+}
+
+.tripdych{
+    position: absolute;
+    top: 500px;
+    left: 1000px;
+}
+
+.plate{
+    position: absolute;
+    top: 600px;
+    left: 600px;
+}
+
+.jewelry-box{
+    position: absolute;
+    top: 450px;
+    left: 275px;
+}
+
+.description{
+    position: static;
+    padding-top: 300px;
+    margin: auto;
+    width: 200px;
+    text-align: center;
+}
+

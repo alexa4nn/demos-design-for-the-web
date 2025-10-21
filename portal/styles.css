@@ -1,0 +1,104 @@
+
+body{
+    background-color: black;
+}
+
+.container{
+    padding: 200px 0px;
+    display: flex;
+    width: 60%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.flower-container{
+    position: relative;
+    top: -200px;
+    display: flex;
+    width: 60%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.portal1{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    filter: blur(5px); 
+}
+
+.portal2{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    filter: blur(5px); 
+}
+
+.portal3{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    filter: blur(5px); 
+}
+
+.portal1, .portal2, .portal3 {
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    padding: 20px;
+}
+	
+.portal1:hover {
+    filter: blur(80px);  
+    cursor: pointer;
+}
+
+.portal2:hover {
+    filter: blur(80px);  
+    cursor: pointer;
+}
+
+.portal3:hover {
+    filter: blur(80px);  
+    cursor: pointer;
+}
+
+.flower1{
+    display:none;
+}
+.flower2{
+    display:none;
+}
+.flower3{
+    display:none;
+}
+
+.appear1{
+    display: block;
+    position: absolute;
+    top: -100;
+    left: 25px;
+  }
+
+  .appear2{
+    display: block;
+    position: absolute;
+    top: -100;
+    left: 350px;
+  }
+
+  .appear3{
+    display: block;
+    position: absolute;
+    top: -100;
+    left: 650px;
+  }
+  
+
+
+

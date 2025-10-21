@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example5</title>
+
+    <style>
+        .container{
+            width: 1200px;
+            height: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        .one{
+            background-color: lavender;
+            grid-row: 1 / end;
+            grid-column: 1 / 1;
+        }
+
+        .two{
+            background-color: rosybrown;
+            grid-row: 1 / 1;
+            grid-column: 2 / end ;
+            
+        }
+        
+
+        .three{
+            background-color: maroon;
+            grid-row: 2 / 4;
+            grid-column: 2 / 4 ;
+        }
+        
+
+        .four{
+            background-color: lightblue;
+            grid-row: 2 / 4;
+            grid-column: 4 / end ;
+            
+        }
+        
+
+        .five{
+            background-color: lightblue;
+            grid-row: 4 / end ;
+            grid-column: 2 / 4;
+            
+        }
+        
+
+        .six{
+            background-color: maroon;
+            grid-row: 4 / end ;
+            grid-column: 4 / end;
+           
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+        <div class="six"></div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+.hover-item{
+    width: 500;
+    height: 500;
+    background-image: url(image/pink-praying-mantis.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    transform: scale(1);
+    transition:2s
+}
+
+.hover-item:hover{
+    background-color: #ae2563;
+    background-image: url(image/cat.png);
+    transform: scale(.75);
+    transition:2s
+}
+
+#text{
+    color: white;
+    font-size: 80px;
+    display: none;
+    transition:2s
+}
+
+.hover-item:hover #text{
+    display: block;
+    transition:2s
+}

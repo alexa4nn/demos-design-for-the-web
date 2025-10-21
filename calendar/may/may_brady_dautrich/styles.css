@@ -1,0 +1,43 @@
+header {
+    text-align: center;
+    color:aliceblue;
+    font-size: 80px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    background-image: url(images/lily-of-the-valley-convallaria-majalis-1663608154.jpg)
+}
+
+body{
+    background-color: lightpink;
+    font-family: 'Sora', sans-serif;
+}
+
+.month{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.day{
+    color: rgb(249, 74, 100);
+    font-size: 20px;
+    background-color: aliceblue;
+    width: 150px;
+    height: 150px;
+    margin: 7px;
+    display: flex;
+    justify-content: end;
+    
+}
+
+.space{
+    background-color: lightpink;
+    width: 150px;
+    height: 150px;
+    margin: 7px;
+}
+
+p{
+    padding-right: 20px;
+}
