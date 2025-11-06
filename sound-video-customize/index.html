@@ -1,0 +1,130 @@
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sound and video</title>
+</head>
+<body>
+    <main>
+        <section>
+            <video controls style="height:auto; width:100%;" poster="media/fishermans-warf.png">
+            <source src="media/fishermans-warf.mp4" style="height: 600px;" type="video/mp4">
+        </video>
+        </section>
+        <section>
+            <audio src="media/creek-water.mp3" autoplay loop></audio>
+        </section>
+    </main>
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>sound and video</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; }
+    main { max-width: 900px; margin: 0 auto; padding: 1.5rem; display: grid; gap: 2rem; }
+    section { display: grid; gap: .75rem; }
+
+    /* media */
+    video { width: 100%; height: auto; display: block; object-fit: cover; }
+    audio { width: 100%; display: block; }
+
+    /* custom button row */
+    .controls { display: grid; place-items: start; }
+    .media-btn {
+      border: 0; background: transparent; padding: 0; cursor: pointer;
+      display: inline-grid; place-items: center;
+    }
+    .media-btn img { width: 72px; height: 72px; display: block; }
+    .media-btn:focus-visible { outline: 3px solid #5a8dff; outline-offset: 4px; border-radius: 12px; }
+    .hint { font-size: .875rem; opacity: .75; }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- VIDEO -->
+    <section>
+      <video id="video1" poster="media/fishermans-warf.png" preload="metadata" playsinline>
+        <source src="media/fishermans-warf.mp4" type="video/mp4" />
+        <!-- you can add more <source> types for wider codec support -->
+        sorry, your browser doesn’t support embedded videos.
+      </video>
+
+      <!-- custom play/pause image button UNDER the video -->
+      <div class="controls">
+        <button
+          class="media-btn"
+          id="video1-btn"
+          aria-label="play video"
+          aria-pressed="false"
+          data-target="video1"
+          data-type="video">
+          <img src="raven-play.png" alt="play">
+        </button>
+        <span class="hint">click the image to play/pause</span>
+      </div>
+    </section>
+
+    <!-- AUDIO -->
+    <section>
+      <audio id="audio1" src="media/creek-water.mp3" preload="metadata"></audio>
+
+      <!-- custom play/pause image button UNDER the audio -->
+      <div class="controls">
+        <button
+          class="media-btn"
+          id="audio1-btn"
+          aria-label="play audio"
+          aria-pressed="false"
+          data-target="audio1"
+          data-type="audio">
+          <img src="raven-play.png" alt="play">
+        </button>
+        <span class="hint">click the image to play/pause</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // set your image filenames here if different
+    const PLAY_ICON  = 'raven-play.png';
+    const PAUSE_ICON = 'raven-pause.png';
+
+    function wireButton(btn) {
+      const media = document.getElementById(btn.dataset.target);
+      if (!media) return;
+
+      // when the button is clicked: play/pause
+      btn.addEventListener('click', () => {
+        if (media.paused || media.ended) { media.play(); } else { media.pause(); }
+      });
+
+      // update the button image + ARIA when state changes
+      const setState = (playing) => {
+        btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+        btn.setAttribute('aria-label', playing ? (btn.dataset.type === 'video' ? 'pause video' : 'pause audio')
+                                              : (btn.dataset.type === 'video' ? 'play video'  : 'play audio'));
+        const img = btn.querySelector('img');
+        if (img) img.src = playing ? PAUSE_ICON : PLAY_ICON;
+        img.alt = playing ? 'pause' : 'play';
+      };
+
+      media.addEventListener('play',  () => setState(true));
+      media.addEventListener('pause', () => setState(false));
+      media.addEventListener('ended', () => { media.currentTime = 0; setState(false); });
+
+      // initialize the image based on the initial state
+      setState(!media.paused && !media.ended);
+    }
+
+    // wire both buttons
+    wireButton(document.getElementById('video1-btn'));
+    wireButton(document.getElementById('audio1-btn'));
+  </script>
+</body>
+</html>
